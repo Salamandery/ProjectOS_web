@@ -24,7 +24,8 @@ import {
 
 export default function Menu(props) {
     const dispatch = useDispatch();
-    const menu = useSelector(state=>{console.log(state.user)});
+    const menu = [];
+    //const menu = useSelector(state=>state.user.menu);
     const [hMenu, setH] = useState('auto');
     const [fActive, setfActive] = useState(true);
     const [status, setStatus] = useState(props.status);

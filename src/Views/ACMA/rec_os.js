@@ -18,19 +18,20 @@ import { FaCheck } from 'react-icons/fa';
 export default function RecOs() {
     document.title = "INTRANET - RECEBIMENTO";
     const user = useSelector(state=>state.user.user);
-    const me = useSelector(state=>state.user.me);
-    const [os, setOs] = useState([]);
+    
+    //const company = useSelector(state=>state.user.company);
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
-        loadOS();
+        loadServices();
     }, []);
 
-    async function loadOS() {
+    async function loadServices() {
         try {
-            const res = await api.get(`/push_to_rec_os/${user.multi_oficina}/${me}`);
+            const res = await api.get(`/schedules/`);
             if (res.data) {
-                setOs(res.data.rows);
-                console.log(res.data.rows)
+                setServices(res.data);
+                console.log(res.data)
             }
         } catch(err) {
             toast.error('Ops, aconteceu alguma coisa, faça login novamente');
@@ -41,14 +42,13 @@ export default function RecOs() {
     async function handlerRec(srv) {
         try {
             await api.post(`/to_rec_os`, {
-                resp: user.cd_usuario,
-                os: srv.CD
+                provider: true,
             });
             
             toast.success('Recebimento realizado com sucesso');
 
             setTimeout(()=>{
-                loadOS();
+                loadServices();
             }, 1000);
         } catch(err) {
             toast.error('Ops, aconteceu alguma coisa, faça login novamente');
@@ -64,27 +64,27 @@ export default function RecOs() {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Cód.</th>
+                            <th>CÓD.</th>
                             <th>DATA</th>
                             <th>SOLICITANTE</th>
-                            <th>DESCRIÇÃO</th>
+                            <th>TÍTULO</th>
                             <th>SETOR</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            os ? os.map(srv=>(
-                                <tr key={srv.CD}>
+                            services ? services.map(srv=>(
+                                <tr key={srv.id}>
                                     <td>
                                         <ButtonDefault tp="success"  onClick={e=>handlerRec(srv)}>
                                             <FaCheck />
                                         </ButtonDefault>
                                     </td>
-                                    <td>{srv.CD}</td>
-                                    <td>{srv.DATA}</td>
-                                    <td>{srv.SOL}</td>
-                                    <td>{srv.DESCR}</td>
-                                    <td>{srv.SETOR}</td>
+                                    <td>{srv.id}</td>
+                                    <td>{srv.date}</td>
+                                    <td>{srv.user_id}</td>
+                                    <td>{srv.title}</td>
+                                    <td>{srv.location_id}</td>
                                 </tr>
                             )) : null
                         }

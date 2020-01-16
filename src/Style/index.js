@@ -147,9 +147,8 @@ export const Select = styled.select`
         border-radius: 4px;
     }
 `;
-export const TextArea = styled.textarea.attrs({
-    rows: 7
-})`
+export const TextArea = styled.textarea`
+    width: ${props => props.w};
     resize: none;
     margin-bottom: 10px;
     padding: 10px 15px;
@@ -157,7 +156,13 @@ export const TextArea = styled.textarea.attrs({
     border-radius: 3px;
     border: 1px solid #999;
     background: #eee;
-    color: #fff;
+    font-size: 12px;
+    color: #333;
+
+    &:focus {
+        font-size: 14px;
+        font-weight: bold;
+    }
 `;
 export const ButtonDefault = styled.button`
     display: flex;

@@ -1,0 +1,671 @@
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 25px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 10px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 22px;
+        top: 8px;
+        left: 0;
+
+        padding: 10px 15px 0px 15px;
+    }
+    .menu-enabled {
+        width: 80%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 20%;
+    }
+    .logo {
+        margin-top: 10px;
+        height:40%;
+        width: 90%;
+    }
+    .intro-net {
+        width: 90%; 
+        margin-left: 5%; 
+        margin-top:-40px;
+    }
+    .cad_os {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .Flogin {
+        width: 95%;
+        margin-top: 10%;
+        background-color: transparent;
+    }
+    .btn-lg {
+        width: 95%;
+    }
+    .fa-icon {
+        max-width: 13vw;
+        height: 18.3vw;
+    }
+    #m_Buttons {
+        margin-top: 40px;
+    }
+    #m_Buttons button {
+        margin-bottom: 5px;
+    }
+    .input-container {
+        width: 96%;
+    }
+    .input-group {
+        width: 100%;
+    }
+    .input-lg {
+        width: auto;
+    }
+    logo {
+        left: 0;
+        top: 0;
+    }
+    .logo-lg {
+        width: 30%;
+        top: 465px;
+    }
+    logo p {
+        color: #fff;
+        font-size: 18px;
+        top: 0px;
+        left: 30%;
+    }
+    .list-osMobile {
+        height: 88%;
+        margin-top: 5px;
+        margin-bottom: 50px;
+        overflow-y: scroll;
+    }
+    .expand {
+        font-size: 22px;
+        height: 60px;
+    }
+}
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 25px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 5px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 26px;
+        left: 8px;
+        border: 1px solid #fff;
+        height: 80%;
+
+        margin: 5px 0px 5px 0px;
+    }
+    .dropdownbar ul li {
+        font-size: 18px;
+    }
+    .menu-enabled {
+        width: 20%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 80%;
+    }
+    .logo {
+        margin-top: 25px;
+        width: 90%;
+    }
+    .intro-net {
+        width: 90%; 
+        margin-left: 5%; 
+        margin-top:-30px;
+    }
+    .cad_os {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .Flogin {
+        width: 95%;
+        margin-top: 10%;
+        background-color: transparent;
+    }
+    .btn-lg {
+        width: 95%;
+    }
+    .fa-icon {
+        max-width: 10vw;
+        height: 15.5vw;
+    }
+    #m_Buttons {
+        margin-top: 40px;
+    }
+    #m_Buttons button {
+        margin-bottom: 5px;
+    }
+    .input-container {
+        width: 96%;
+    }
+    .input-group {
+        width: 100%;
+    }
+    .input-lg {
+        width: auto;
+    }
+    logo {
+        left: 0;
+        bottom: 30px;
+    }
+    logo p {
+        font-size: 18px;
+        top: 40%;
+        left: 30%;
+    }
+    .expand {
+        font-size: 24px;
+        height: 60px;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 899px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 25px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 5px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 26px;
+        left: 8px;
+        border: 1px solid #fff;
+        height: 80%;
+
+        margin: 5px 0px 5px 0px;
+    }
+    .dropdownbar ul li {
+        font-size: 18px;
+    }
+    .menu-enabled {
+        width: 20%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 80%;
+    }
+    .logo {
+        margin-top: 25px;
+        width: 90%;
+    }
+    .intro-net {
+        width: 90%; 
+        margin-left: 5%; 
+        margin-top:-30px;
+    }
+    .cad_os {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .messageBox {
+        display: none;
+    }
+    .Flogin {
+        width: 80%;        
+        margin-top: 3%;
+        background-color: transparent;
+    }
+    .loginForm input, button, select {
+        margin: 10px 0px 0px 0px;
+        outline: none;
+    }
+    .btn-lg {
+        width: 50%;
+    }
+    .btn-logout {
+        margin-top: 10px;
+    }
+    .input-container {
+        width: 60%;
+    }
+    .input-group {
+        height: 100px;
+        width: 70%;
+    }
+    .fa-icon {
+        max-width: 10vw;
+        height: 15.5vw;
+    }
+    #m_Buttons {
+        margin-top: 40px;
+    }
+    #m_Buttons button {
+        margin-bottom: 5px;
+    }
+    .input-lg {
+        height: 10px;
+        width: auto;
+    }
+    logo {
+        left: 0;
+        top: 0;
+    }
+    .logo-lg {
+        width: 30%;
+        top: 35px;
+    }
+    logo p {
+        color: #fff;
+        font-size: 18px;
+        top: 0px;
+        left: 40%;
+    } 
+}
+@media only screen and (min-width: 900px) and (min-width: 1199px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 25px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 5px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 26px;
+        left: 8px;
+        border: 1px solid #fff;
+        height: 80%;
+
+        margin: 5px 0px 5px 0px;
+    }
+    .dropdownbar ul li {
+        font-size: 18px;
+    }
+    .menu-enabled {
+        width: 20%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 80%;
+    }
+    .Flogin {
+        width: 30%;        
+        margin-top: 7%;
+        box-shadow: 5px 5px 9px rgb(124, 124, 124);
+    }
+    .btn-lg {
+		width: 50%;
+    }
+    .logo-lg {
+        width: 30%;
+        left: 35%;
+        bottom: 5px;
+    }
+    .fa-icon {
+        max-width: 5vw;
+        height: 6.5vw;
+    }
+    logo {
+        left: 0;
+        bottom: 30px;
+    }
+    logo p {
+        left: 44%;
+        top: 0;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 25px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 5px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 26px;
+        left: 8px;
+        border: 1px solid #fff;
+        height: 80%;
+
+        margin: 5px 0px 5px 0px;
+    }
+    .dropdownbar ul li {
+        font-size: 18px;
+    }
+    .menu-enabled {
+        width: 20%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 80%;
+    }
+    .Flogin {
+        width: 30%;        
+        margin-top: 7%;
+        box-shadow: 5px 5px 9px rgb(124, 124, 124);
+    }
+    .btn-lg {
+		width: 50%;
+    }
+    .logo-lg {
+        width: 30%;
+        left: 35%;
+        bottom: 5px;
+    }
+    .fa-icon {
+        max-width: 3vw;
+        height: 4.2vw;
+    }
+    logo {
+        left: 0;
+        bottom: 30px;
+    }
+    logo p {
+        left: 44%;
+        top: 0;
+    }
+}
+@media only screen and (min-width: 1900px) {
+    /* GERAL */
+    .navbar {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 6%;
+        margin: 0 0 0 0;
+        padding: 0 0 0 5px;
+    }
+    .menubar {
+        top: 6%;
+        height: 94%;	
+        width: 0;
+    }
+    .content {
+        top: 6%;
+        margin: 0 0 0 0;
+        padding: 0px 0px 0px 10px;
+        right: 0;
+        height: 94%;
+        width: 100%;
+    }
+    /* nav & menu */
+    .menubar ul {
+        margin: 0px;
+        padding: 5px 0 0 10px;
+    }
+    .navbar ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .navbar li {
+        font-size: 24px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a {
+        padding: 5px 15px 0px 15px;
+        margin: 0px 0px 0px 0px;
+    }
+    .navbar a:active {
+    }
+    .navbar a:hover {
+    }
+    .navbar a:visited {
+    }
+    .navbar .menuBarbtn {
+        font-size: 26px;
+        left: 8px;
+        border: 1px solid #fff;
+        height: 80%;
+
+        margin: 5px 0px 5px 0px;
+    }
+    .dropdownbar ul li {
+        font-size: 18px;
+    }
+    .menu-enabled {
+        width: 20%;
+    }
+
+    /* Content */
+
+    .contentDesc {
+        width: 80%;
+    }
+    .Flogin {
+        width: 30%;        
+        margin-top: 7%;
+        box-shadow: 5px 5px 9px rgb(124, 124, 124);
+    }
+    .btn-lg {
+		width: 50%;
+    }
+    .logo-lg {
+        width: 30%;
+        left: 35%;
+        bottom: 5px;
+    }
+    .fa-icon {
+        max-width: 2.5vw;
+        height: 3.4vw;
+    }
+    logo {
+        left: 0;
+        bottom: 30px;
+    }
+    logo p {
+        left: 44%;
+        top: 0;
+    }
+	.table {
+		font-size: 18px;
+	}
+}

@@ -19,7 +19,7 @@ function Router({
         return <Redirect to="/" />;
     } 
 
-    if (signed && (rest.path === "/Login" || rest.path === "/")) {
+    if (signed && (rest.path === "/")) {
         return <Redirect to="/Dashboard" />
     }
 

@@ -119,7 +119,7 @@ export default function SolOs() {
   return (
     <Container direction="column" w="100%">
       <Wrapper w="100%" content="space-between">
-        <h1>SOLICITAÇÃO DE O.S.</h1>
+        <h1>SOLICITAÇÃO DE O.S.</h1> 
         <ButtonDefault size="md" tp="action" onClick={handlerInsert}>
           <FaPlus />
           <span>Novo Serviço</span>
@@ -241,7 +241,7 @@ export default function SolOs() {
                           ? srvi.status.replace("O", "ABERTO")
                           : null}
                       </td>
-                      <td>{srvi.company}</td>
+                      <td>{srvi.location.sector.company.id}</td>
                     </tr>
                   ))
                 : null}

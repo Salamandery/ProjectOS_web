@@ -221,6 +221,7 @@ export const Table = styled.table`
         font-weight: bold;
         color: ${props => props.textColor || "#666"};
         font-size: ${props => props.fontSize};
+        text-transform: uppercase;
     }
     tbody tr td:${props => props.childDefinied || 'first'}-child {
         display: flex;

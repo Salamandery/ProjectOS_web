@@ -3,9 +3,6 @@ import React, {
     useState
 } from 'react';
 import { toast } from 'react-toastify';
-import {
-    useSelector
-} from 'react-redux';
 import api from '../../Services/api';
 import {
     Container,
@@ -17,9 +14,7 @@ import { FaCheck } from 'react-icons/fa';
 
 export default function RecOs() {
     document.title = "INTRANET - RECEBIMENTO";
-    const user = useSelector(state=>state.user.user);
     
-    //const company = useSelector(state=>state.user.company);
     const [services, setServices] = useState([]);
 
     useEffect(() => {
@@ -28,7 +23,7 @@ export default function RecOs() {
 
     async function loadServices() {
         try {
-            const res = await api.get(`/schedules/`);
+            const res = await api.get(`/schedules/0`);
             if (res.data) {
                 setServices(res.data);
                 console.log(res.data)
@@ -41,9 +36,7 @@ export default function RecOs() {
 
     async function handlerRec(srv) {
         try {
-            await api.post(`/to_rec_os`, {
-                provider: true,
-            });
+            await api.put(`/schedule/${srv.id}`);
             
             toast.success('Recebimento realizado com sucesso');
 
@@ -82,9 +75,9 @@ export default function RecOs() {
                                     </td>
                                     <td>{srv.id}</td>
                                     <td>{srv.date}</td>
-                                    <td>{srv.user_id}</td>
+                                    <td>{srv.user.name}</td>
                                     <td>{srv.title}</td>
-                                    <td>{srv.location_id}</td>
+                                    <td>{srv.location.description}</td>
                                 </tr>
                             )) : null
                         }

@@ -14,19 +14,16 @@ import {
 
 export default function PnlOs() {
     document.title = "INTRANET - PAINEL O.S.";
-
-    const user = useSelector(state=>state.user.user);
-    const me = useSelector(state=>state.user.me);
     
-    const [os, setOs] = useState([]);
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
         async function loadOS() {
             try {
-                const res = await api.get(`/push_tb_os/${user.multi_oficina}/${me}/${user.cd_oficina}`);
+                const res = await api.get(`/schedules/2`);
 
                 if (res.data) {
-                    setOs(res.data.rows);
+                    setServices(res.data);
                 }
             } catch(err) {
                 console.log(err);
@@ -46,22 +43,22 @@ export default function PnlOs() {
                         <tr>
                             <th>Cód.</th>
                             <th>DATA</th>
-                            <th>DESCRIÇÃO</th>
+                            <th>TÍTULO</th>
                             <th>SOLICITANTE</th>
-                            <th>SETOR</th>
+                            <th>LOCALIDADE</th>
                             <th>RESPONSÁVEL</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            os ? os.map(srv=>(
-                                <tr key={srv.CD}>
-                                    <td>{srv.CD}</td>
-                                    <td>{srv.DATA}</td>
-                                    <td>{srv.DS}</td>
-                                    <td>{srv.SOL}</td>
-                                    <td>{srv.SETOR}</td>
-                                    <td>{srv.RES}</td>
+                            services ? services.map(srv=>(
+                                <tr key={srv.id}>
+                                    <td>{srv.id}</td>
+                                    <td>{srv.date}</td>
+                                    <td>{srv.title}</td>
+                                    <td>{srv.user ? srv.user.name : null}</td>
+                                    <td>{srv.location.description}</td>
+                                    <td>{srv.provider ? srv.provider.name : null}</td>
                                 </tr>
                             )) : null
                         }

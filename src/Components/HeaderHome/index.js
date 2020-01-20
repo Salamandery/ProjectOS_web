@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import api from "../../Services/api";
-
-import { useDispatch } from "react-redux";
-import { SetMeRequest } from "../../Services/store/user/action";
-
 import { Container, Content, Input, Form } from "../../Style";
 
 import { MdSearch } from "react-icons/md";
@@ -12,15 +7,7 @@ import { MdSearch } from "react-icons/md";
 import { Link, NavBar } from "./style";
 
 const HeaderHome = () => {
-  const dispatch = useDispatch();
-
-  const [sauda, setSauda] = useState("");
-
-  const [ip, setIp] = useState("");
-  const [me, setMe] = useState(1);
-
   const [search, setSearch] = useState("");
-  const [ipLabel, setIPLabel] = useState("");
 
   const [relogio, setRelogio] = useState(
     new Date().getHours() +
@@ -31,38 +18,10 @@ const HeaderHome = () => {
   );
 
   useEffect(() => {
-    async function getInfo() {
-      const res = await api.get("/getInfoMachine");
-
-      setIp(res.data.ip);
-
-      setMe(res.data.ipMe);
-
-      dispatch(SetMeRequest(res.data.ipMe));
-
-      if (res.data.hr > 5 && res.data.hr < 12) {
-        setSauda("BOM DIA!");
-      } else if (res.data.hr < 18) {
-        setSauda("BOA TARDE!");
-      } else {
-        setSauda("BOA NOITE!");
-      }
-    }
-    getInfo();
-  }, [me]);
-
-  useEffect(() => {
     setTimeout(() => {
       Watch();
     }, 1000);
   }, [relogio]);
-
-  function searchText(e) {
-    let text = e.toLowerCase();
-
-    setSearch(text);
-    typeSearch("", text);
-  }
 
   function searchOnGoogle() {
     window.open(
@@ -71,14 +30,6 @@ const HeaderHome = () => {
         "+"
       )}&cx=010347505017249818224:0llb0w2kgjb`
     );
-  }
-
-  function typeSearch(type, text) {
-    if (text.toLowerCase() === "meuip") {
-      setIPLabel(ip);
-    } else {
-      setIPLabel("");
-    }
   }
 
   function Watch() {
@@ -120,7 +71,6 @@ const HeaderHome = () => {
           INTRANET
         </Link>
         <Content w="90%" pad="20px" items="center" content="flex-end">
-          <Link fSize="1.2em">{ipLabel}</Link>
           <Form
             w="60%"
             bg="#003380"
@@ -138,7 +88,7 @@ const HeaderHome = () => {
               bg="#003380"
               mBottom="0px"
               value={search}
-              onChange={e => searchText(e.target.value)}
+              onChange={e => setSearch(e.target.value)}
               onKeyPress={e => {
                 if (e.key === "Enter") {
                   searchOnGoogle();
@@ -155,10 +105,6 @@ const HeaderHome = () => {
               size={24}
             />
           </Form>
-          {/*
-                <Link fSize="1.2em">IP: {ip}</Link>
-                <Link fSize="1.2em">{sauda}</Link>
-            */}
           <Link fSize="1.8em">{relogio}</Link>
         </Content>
       </NavBar>

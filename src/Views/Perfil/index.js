@@ -9,7 +9,6 @@ const Perfil = () => {
   document.title = "INTRANET - PERFIL";
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.user);
-  const me = useSelector(state => state.user.me);
 
   const [assinatura, setAssinatura] = useState(
     profile.assinatura !== "null" ? profile.assinatura : ""

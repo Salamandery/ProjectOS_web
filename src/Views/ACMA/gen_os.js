@@ -26,27 +26,8 @@ export default function GenOs() {
     }
     loadOS();
   }, []);
-
-  async function loadOS() {
-    try {
-      const res = await api.get(`/schedule/1`);
-      if (res.data) {
-        setServices(res.data);
-      }
-    } catch (err) {
-      toast.error("Ops, aconteceu alguma coisa, faça login novamente");
-      console.log(err);
-    }
-  }
   function handlerEdit(item) {
     history.push("/edit_os", item);
-  }
-  async function handlerAtend(item) {
-    await api.get(`/set_atend_os/`);
-    toast.success("Serviço iniciado com sucesso");
-    setTimeout(() => {
-      loadOS();
-    }, 1000);
   }
   function typeSearch(type, text) {
     let items = services;

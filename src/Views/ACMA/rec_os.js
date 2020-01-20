@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import ErrorHandling from "../../utils/ErrorHandling";
 import api from "../../Services/api";
 import { Container, Table, CardBlock, ButtonDefault } from "../../Style";
 import { FaCheck } from "react-icons/fa";
@@ -18,25 +19,27 @@ export default function RecOs() {
       const res = await api.get(`/schedules/0`);
       if (res.data) {
         setServices(res.data);
-        console.log(res.data);
       }
     } catch (err) {
-      toast.error("Ops, aconteceu alguma coisa, faça login novamente");
+      toast.error(ErrorHandling(err));
       console.log(err);
     }
   }
 
   async function handlerRec(srv) {
     try {
-      await api.put(`/schedule/${srv.id}`);
-
-      toast.success("Recebimento realizado com sucesso");
+      const res = await api.put(`/schedule/${srv.id}`);
+      if (res.data.msg) {
+        toast.info(res.data.msg);
+      } else {
+        toast.success("Recebimento realizado com sucesso");
+      }
 
       setTimeout(() => {
         loadServices();
       }, 1000);
     } catch (err) {
-      toast.error("Ops, aconteceu alguma coisa, faça login novamente");
+      toast.error(ErrorHandling(err));
       console.log(err);
     }
   }

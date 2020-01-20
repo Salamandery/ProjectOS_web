@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import ErrorHandling from "../../utils/ErrorHandling";
+import ErrorHandling from "../../Utils/ErrorHandling";
 import api from "../../Services/api";
 import { Container, Table, CardBlock, ButtonDefault } from "../../Style";
 import { FaCheck } from "react-icons/fa";

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ErrorHandling from '../../Utils/ErrorHandling';
 import { useSelector } from "react-redux";
 import { FaPlus } from "react-icons/fa";
 import api from "../../Services/api";
@@ -20,10 +21,8 @@ export default function SolOs() {
   const user = useSelector(state => state.user.user);
 
   const [id, setId] = useState("");
-  const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [note, setNote] = useState("");
   const [workshop_id, setWorkshop] = useState(0);
   const [sector_id, setSector] = useState(0);
   const [location_id, setLocation] = useState(0);
@@ -40,7 +39,7 @@ export default function SolOs() {
         const res = await api.get(`/services`);
         setServices(res.data);
       } catch (err) {
-        toast.error("Ops, aconteceu alguma coisa de errado");
+        toast.error(ErrorHandling(err));
         console.log(err);
       }
     }
@@ -50,7 +49,7 @@ export default function SolOs() {
         const res = await api.get(`/workshops/`);
         setWorkshops(res.data);
       } catch (err) {
-        toast.error("Ops, aconteceu alguma coisa de errado");
+        toast.error(ErrorHandling(err));
         console.log(err);
       }
     }
@@ -60,7 +59,7 @@ export default function SolOs() {
         const res = await api.get(`/sectors/`);
         setSectors(res.data);
       } catch (err) {
-        toast.error("Ops, aconteceu alguma coisa de errado");
+        toast.error(ErrorHandling(err));
         console.log(err);
       }
     }
@@ -76,7 +75,7 @@ export default function SolOs() {
         const res = await api.get(`/locations/${sector_id}`);
         setLocations(res.data);
       } catch (err) {
-        toast.error("Ops, aconteceu alguma coisa de errado");
+        toast.error(ErrorHandling(err));
         console.log(err);
       }
     }
@@ -88,30 +87,34 @@ export default function SolOs() {
       const res = await api.get(`/services`);
       setServices(res.data);
     } catch (err) {
-      toast.error("Ops, aconteceu alguma coisa de errado");
+      toast.error(ErrorHandling(err));
       console.log(err);
     }
   }
 
   async function handlerInsert() {
     try {
-      await api.post(`/service/${id}`, {
+      const date = new Date();
+      const res = await api.post(`/service/${id}`, {
+        date,
         title,
         description,
-        note,
-        date,
         sector_id,
         location_id,
         provider: provider ? provider : false,
         workshop_id
       });
 
-      toast.success("Ordem de Serviço cadastrada com sucesso");
+      if (res.data.msg) {
+        toast.info(res.data.msg);
+      } else {
+        toast.success("Ordem de Serviço cadastrada com sucesso");
+      }
       setTimeout(() => {
         loadInfoOs();
       }, 1000);
     } catch (err) {
-      toast.info("Preencha os campos corretamente");
+      toast.error(ErrorHandling(err));
       console.log(err);
     }
   }

@@ -21,16 +21,20 @@ export function* updateProfile({ payload }) {
         name,
         login,
         email,
-        ws,
-        wd,
+        workshops: ws,
+        workshop_default :wd,
         tp_user
       },
       rest.oldPassword ? rest : {}
     );
 
-    yield call(api.put, "user", profile);
+    const res = yield call(api.put, "user", profile);
 
-    toast.success("Perfil atualizado com sucesso");
+    if (res.data.status) {
+      toast.info(res.data.msg);
+    } else {
+      toast.success("Alteração realizada com sucesso");
+    }
 
     yield put(updateProfileSuccess({ profile, company }));
   } catch (err) {

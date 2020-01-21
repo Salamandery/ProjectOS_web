@@ -17,7 +17,7 @@ import {
 import { signOutRequest } from '../../Services/store/auth/action';
 const Header = () => {
     const dispatch = useDispatch();
-    const user = useSelector(state=> state.user.user);
+    const user = useSelector(state => state.user.user);
 
     function handlerLogout() {
         dispatch(signOutRequest());

@@ -67,10 +67,10 @@ export default function TransOs() {
     try {
       const res = await api.put(`/schedule/${id}/${provider_id}`);
 
-      if (res.data.msg) {
+      if (res.data.status) {
         toast.info(res.data.msg);
       } else {
-        toast.success("Transferência realizado com sucesso");
+        toast.success("Transferência realizada com sucesso!");
       }
 
       setTimeout(() => {

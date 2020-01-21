@@ -29,7 +29,7 @@ export default function RecOs() {
   async function handlerRec(srv) {
     try {
       const res = await api.put(`/schedule/${srv.id}`);
-      if (res.data.msg) {
+      if (res.data.status) {
         toast.info(res.data.msg);
       } else {
         toast.success("Recebimento realizado com sucesso");

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ErrorHandling from '../../Utils/ErrorHandling';
+import ErrorHandling from "../../Utils/ErrorHandling";
 import { useSelector } from "react-redux";
 import { FaPlus } from "react-icons/fa";
 import api from "../../Services/api";
@@ -105,10 +105,10 @@ export default function SolOs() {
         workshop_id
       });
 
-      if (res.data.msg) {
+      if (res.data.status) {
         toast.info(res.data.msg);
       } else {
-        toast.success("Ordem de Serviço cadastrada com sucesso");
+        toast.success("Ordem de Serviço cadastrada com sucesso!");
       }
       setTimeout(() => {
         loadInfoOs();

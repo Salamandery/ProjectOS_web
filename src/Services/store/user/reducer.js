@@ -16,7 +16,7 @@ export default function user(state = INITIAL_STATE, action) {
         break;
       }
       case "@auth/SIGN_IN_SUCCESS": {
-        draft.user = action.payload.user.userConfig;
+        draft.user = action.payload.user.userConfig.user;
         draft.company = action.payload.user.company;
         draft.menu = action.payload.menu;
         break;

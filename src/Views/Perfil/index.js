@@ -10,18 +10,13 @@ const Perfil = () => {
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.user);
 
+  const [login, setLogin] = useState(profile.login ? profile.login : "");
   const [assinatura, setAssinatura] = useState(
     profile.assinatura !== "null" ? profile.assinatura : ""
   );
-  const cd_usuario = profile.user;
-
   const [name, setName] = useState(profile.name !== "null" ? profile.name : "");
-  const [multi_oficina, setM_o] = useState(
-    profile.multi_oficina !== "null" ? profile.multi_oficina : ""
-  );
-  const [cd_oficina, setO] = useState(
-    profile.cd_oficina !== "null" ? profile.cd_oficina : ""
-  );
+  const [ws, setWs] = useState(profile.ws !== "null" ? profile.ws : "");
+  const [wd, setWd] = useState(profile.wd !== "null" ? profile.wd : "");
   const [email, setEmail] = useState(
     profile.email !== "null" ? profile.email : ""
   );
@@ -32,16 +27,16 @@ const Perfil = () => {
   function handlerSave(e) {
     dispatch(
       updateProfileRequest({
-        cd_usuario,
+        login,
         name,
         email,
-        multi_oficina,
-        cd_oficina,
+        ws,
+        wd,
         assinatura,
         password,
         oldPassword,
         confirmPassword,
-        tp_usuario: profile.provider
+        tp_user: profile.provider
       })
     );
   }
@@ -55,7 +50,11 @@ const Perfil = () => {
       direction="column"
     >
       <Form direction="column" w="70%" h="100%" self="center">
-        <Input placeholder="USUÁRIO" value={cd_usuario} disabled />
+        <Input
+          placeholder="USUÁRIO"
+          value={login}
+          onChange={e => setLogin(e.target.value)}
+        />
         <Input
           placeholder="NOME COMPLETO"
           value={name}
@@ -70,13 +69,13 @@ const Perfil = () => {
           <>
             <Input
               placeholder="CÓDIGOS PARA MULTI-OFICINA"
-              value={multi_oficina}
-              onChange={e => setM_o(e.target.value)}
+              value={ws}
+              onChange={e => setWs(e.target.value)}
             />
             <Input
               placeholder="OFICINA PADRÃO"
-              value={cd_oficina}
-              onChange={e => setO(e.target.value)}
+              value={wd}
+              onChange={e => setWd(e.target.value)}
             />
             <Input
               placeholder="ASSINATURA"

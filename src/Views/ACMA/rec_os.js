@@ -53,6 +53,7 @@ export default function RecOs() {
           fontSize="12px"
           lastRowAlign="left"
           textAlign="left"
+          h="100%"
         >
           <thead>
             <tr>

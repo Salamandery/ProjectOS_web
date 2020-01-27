@@ -94,9 +94,7 @@ export default function SolOs() {
 
   async function handlerInsert() {
     try {
-      const date = new Date();
       const res = await api.post(`/service/${id}`, {
-        date,
         title,
         description,
         sector_id,
@@ -108,8 +106,10 @@ export default function SolOs() {
       if (res.data.status) {
         toast.info(res.data.msg);
       } else {
+        console.log(res.data)
         toast.success("Ordem de Serviço cadastrada com sucesso!");
       }
+
       setTimeout(() => {
         loadInfoOs();
       }, 1000);

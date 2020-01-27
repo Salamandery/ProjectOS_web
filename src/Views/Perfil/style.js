@@ -22,7 +22,6 @@ export const Save = styled.button`
     }
 `;
 export const ChangePassword = styled.div`
-    margin-top: 20px;
     align-self: stretch;
     width: 100%;
     display: flex;

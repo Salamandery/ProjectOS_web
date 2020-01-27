@@ -32,7 +32,7 @@ export default function GenOs() {
   function typeSearch(type, text) {
     let items = services;
     let filteredName;
-      
+
     switch (type) {
       default:
         filteredName = items.filter(item => {

@@ -235,7 +235,7 @@ export default function EditOs() {
                   type="datetime-local"
                   placeholder="DATA FINAL"
                   value={date_final}
-                  onChange={e => console.log(e)}
+                  onChange={e => setDtf(e.target.value)}
                   w="23%"
                 />
               </Wrapper>

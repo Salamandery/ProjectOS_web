@@ -102,16 +102,14 @@ export default function SolOs() {
         provider: provider ? provider : false,
         workshop_id
       });
-
-      if (res.data.status) {
+      if (res.data.status !== 'O') {
         toast.info(res.data.msg);
       } else {
-        console.log(res.data)
         toast.success("Ordem de Serviço cadastrada com sucesso!");
       }
 
       setTimeout(() => {
-        loadInfoOs();
+        //loadInfoOs();
       }, 1000);
     } catch (err) {
       toast.error(ErrorHandling(err));
@@ -136,7 +134,7 @@ export default function SolOs() {
                 <Input
                   borderless="true"
                   bold="true"
-                  marginLeft="true"
+                  marginleft="true"
                   placeholder="CÓDIGO"
                   value={id}
                   onChange={e => setId(e.target.value)}
@@ -146,7 +144,7 @@ export default function SolOs() {
                 <Select
                   borderless="true"
                   bold="true"
-                  marginLeft="true"
+                  marginleft="true"
                   value={workshop_id}
                   onChange={e => setWorkshop(e.target.value)}
                 >
@@ -160,7 +158,7 @@ export default function SolOs() {
                 <Select
                   borderless="true"
                   bold="true"
-                  marginLeft="true"
+                  marginleft="true"
                   value={sector_id}
                   onChange={e => setSector(e.target.value)}
                 >
@@ -174,7 +172,7 @@ export default function SolOs() {
                 <Select
                   borderless="true"
                   bold="true"
-                  marginLeft="true"
+                  marginleft="true"
                   value={location_id}
                   onChange={e => setLocation(e.target.value)}
                 >
@@ -190,7 +188,7 @@ export default function SolOs() {
                     type="checkbox"
                     checked={provider}
                     onChange={e => setProvider(e.target.checked)}
-                    marginLeft="true"
+                    marginleft="true"
                   />
                   <span>É o responsável ?</span>
                 </Wrapper>

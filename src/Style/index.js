@@ -148,7 +148,7 @@ export const Select = styled.select`
   margin-bottom: 10px;
   padding: 2px 6px;
   border-radius: 3px;
-  ${props => (props.marginLeft ? "margin: 0 10px 10px 0;" : null)};
+  ${props => (props.marginleft ? "margin: 0 10px 10px 0;" : null)};
   font-size: 12px;
   text-align: center;
   height: 37px;

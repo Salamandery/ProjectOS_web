@@ -1,9 +1,8 @@
-import { format, parseISO } from "date-fns";
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 export function formatDate(date) {
-  date = parseISO(date);
-  return format(date, "dd/MM/yyyy HH:mm");
+  date = moment.tz(date, 'America/Sao_Paulo').format("DD/MM/YYYY HH:mm");
+  return date;
 };
 export function InputformatDate(date) {
   return moment(date).format("YYYY-MM-DDTkk:mm");

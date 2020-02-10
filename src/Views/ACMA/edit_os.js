@@ -95,7 +95,6 @@ export default function EditOs() {
     }
   }
   async function handlerInsert() {
-    console.log(date_final);
     try {
       const res = await api.post(`/user_service`, {
         service_id: srv.id,
@@ -142,6 +141,7 @@ export default function EditOs() {
   async function handlerSelect(item) {
     setId(item.id);
     setNote(item.note);
+    setDescServ(item.service.note || "");
     setSolution(item.solution.id || 0);
     setDti(InputformatDate(item.date_initial));
     setDtf(InputformatDate(item.date_final));

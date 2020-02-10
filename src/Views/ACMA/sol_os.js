@@ -40,7 +40,6 @@ export default function SolOs() {
         setServices(res.data);
       } catch (err) {
         toast.error(ErrorHandling(err));
-        console.log(err);
       }
     }
 
@@ -50,7 +49,6 @@ export default function SolOs() {
         setWorkshops(res.data);
       } catch (err) {
         toast.error(ErrorHandling(err));
-        console.log(err);
       }
     }
 
@@ -60,7 +58,6 @@ export default function SolOs() {
         setSectors(res.data);
       } catch (err) {
         toast.error(ErrorHandling(err));
-        console.log(err);
       }
     }
 
@@ -76,7 +73,6 @@ export default function SolOs() {
         setLocations(res.data);
       } catch (err) {
         toast.error(ErrorHandling(err));
-        console.log(err);
       }
     }
     loadLocations();
@@ -88,7 +84,6 @@ export default function SolOs() {
       setServices(res.data);
     } catch (err) {
       toast.error(ErrorHandling(err));
-      console.log(err);
     }
   }
 
@@ -106,6 +101,7 @@ export default function SolOs() {
         toast.info(res.data.msg);
       } else {
         toast.success("Ordem de Serviço cadastrada com sucesso!");
+        loadInfoOs();
       }
 
       setTimeout(() => {
@@ -113,7 +109,6 @@ export default function SolOs() {
       }, 1000);
     } catch (err) {
       toast.error(ErrorHandling(err));
-      console.log(err);
     }
   }
 
